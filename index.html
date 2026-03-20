@@ -3,124 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPL 2027 | Official Tournament Hub</title>
+    <title>MPL 2027 | Official Website</title>
     <style>
         :root { --navy: #0a192f; --gold: #d4af37; --white: #ffffff; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f0f2f5; color: var(--navy); scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f0f2f5; color: var(--navy); }
         nav { background: var(--navy); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; border-bottom: 3px solid var(--gold); }
         nav a { color: var(--gold); margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
-        header { background: var(--navy); color: var(--gold); padding: 50px 20px; text-align: center; }
+        header { background: var(--navy); color: var(--gold); padding: 40px; text-align: center; }
         .container { max-width: 1100px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h2 { border-left: 6px solid var(--gold); padding-left: 15px; text-transform: uppercase; margin-top: 40px; }
-        .table-scroll { overflow-x: auto; margin-top: 15px; height: 500px; border: 1px solid #ddd; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th { background: var(--navy); color: var(--gold); padding: 12px; position: sticky; top: 0; }
+        h2 { border-left: 6px solid var(--gold); padding-left: 15px; text-transform: uppercase; margin-top: 30px; }
+        
+        /* Fixed Schedule Scrollbox */
+        .schedule-container { height: 600px; overflow-y: auto; border: 1px solid #ddd; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        th { background: var(--navy); color: var(--gold); padding: 12px; position: sticky; top: 0; z-index: 10; }
         td { padding: 10px; border: 1px solid #eee; text-align: center; }
-        .day-header { background: #f8f9fa; font-weight: bold; color: #555; text-align: left; padding-left: 20px; }
-        .knockout { background: #fff4d1; font-weight: bold; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .day-label { background: #f8f9fa; font-weight: bold; text-align: left; padding-left: 15px; color: #666; }
+        .final-day { background: #fff4d1; font-weight: bold; }
+        
+        /* Stats Cards */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
         .stat-card { background: var(--navy); color: white; padding: 15px; border-radius: 8px; text-align: center; border-bottom: 4px solid var(--gold); }
         .stat-card h3 { color: var(--gold); margin: 0; font-size: 0.9rem; }
-        .stat-val { font-size: 1.5rem; font-weight: bold; display: block; margin: 5px 0; }
-        .btn { background: var(--gold); color: var(--navy); padding: 12px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin: 5px; }
+        
+        .btn { background: var(--gold); color: var(--navy); padding: 12px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin: 10px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#register">Register</a>
-    <a href="#points">Points Table</a>
-    <a href="#stats">Player Stats</a>
-    <a href="#schedule">Full Schedule</a>
+    <a href="#register">Registration</a>
+    <a href="#points">Standings</a>
+    <a href="#stats">Leaderboard</a>
+    <a href="#schedule">Schedule</a>
 </nav>
 
 <header>
     <h1>MAHAR PREMIER LEAGUE 2027</h1>
-    <p>12 Teams | 73 Matches | T10 Tennis Ball Cricket</p>
+    <p>12 Teams | 73 Matches | T10 Cricket</p>
 </header>
 
 <div class="container">
 
     <section id="register" style="text-align:center;">
-        <h2>Registration Forms</h2>
-        <a href="YOUR_TEAM_FORM_LINK" class="btn">Team Registration</a>
-        <a href="YOUR_PLAYER_FORM_LINK" class="btn">Player Registration</a>
-    </section>
-
-    <section id="points">
-        <h2>Points Table</h2>
-        <div class="table-scroll" style="height: auto;">
-            <table>
-                <thead><tr><th>Pos</th><th>Team</th><th>P</th><th>W</th><th>L</th><th>NRR</th><th>Pts</th></tr></thead>
-                <tbody>
-                    <tr style="background:#fffdf2"><td>1</td><td>Chibhadkachh Strikers</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr style="background:#fffdf2"><td>2</td><td>Chibhadkachh Warriors</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr style="background:#fffdf2"><td>3</td><td>Dharampur Titans</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr style="background:#fffdf2"><td>4</td><td>Kakadkopar Knight Riders</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>5</td><td>King XI Dharampur</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>6</td><td>Suprime Surat</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>7</td><td>Surat Giants</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>8</td><td>Elite Chikhali</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>9</td><td>Bajarang XI</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>10</td><td>Dhodhadkuva Charges</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>11</td><td>Nanapondha Royals</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                    <tr><td>12</td><td>Vansda Supar Kings</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h2>Tournament Registration</h2>
+        <a href="https://forms.google.com/YOUR_TEAM_FORM" class="btn">Register Team</a>
+        <a href="https://forms.google.com/YOUR_PLAYER_FORM" class="btn">Register Player</a>
     </section>
 
     <section id="stats">
-        <h2>Tournament Records</h2>
+        <h2>Tournament Leaderboard</h2>
         <div class="stats-grid">
-            <div class="stat-card"><h3>Orange Cap</h3><span class="stat-val">Player Name</span>0 Runs</div>
-            <div class="stat-card"><h3>Purple Cap</h3><span class="stat-val">Player Name</span>0 Wickets</div>
-            <div class="stat-card"><h3>Most Sixes</h3><span class="stat-val">Player Name</span>0 Sixes</div>
-            <div class="stat-card"><h3>Best Bowling</h3><span class="stat-val">Player Name</span>0/0</div>
+            <div class="stat-card"><h3>Orange Cap (Runs)</h3><p>TBD</p></div>
+            <div class="stat-card"><h3>Purple Cap (Wickets)</h3><p>TBD</p></div>
+            <div class="stat-card"><h3>Most Sixes</h3><p>0</p></div>
+            <div class="stat-card"><h3>Highest Score</h3><p>0</p></div>
         </div>
     </section>
 
+    <section id="points">
+        <h2>League Points Table</h2>
+        <table>
+            <thead><tr><th>Pos</th><th>Team</th><th>P</th><th>W</th><th>L</th><th>NRR</th><th>Pts</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Chibhadkachh Strikers</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>2</td><td>Chibhadkachh Warriors</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>3</td><td>Dharampur Titans</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>4</td><td>Kakadkopar Knight Riders</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>5</td><td>King XI Dharampur</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>6</td><td>Suprime Surat</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>7</td><td>Surat Giants</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>8</td><td>Elite Chikhali</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>9</td><td>Bajarang XI</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>10</td><td>Dhodhadkuva Charges</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>11</td><td>Nanapondha Royals</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+                <tr><td>12</td><td>Vansda Supar Kings</td><td>0</td><td>0</td><td>0</td><td>0.00</td><td>0</td></tr>
+            </tbody>
+        </table>
+    </section>
+
     <section id="schedule">
-        <h2>Full Schedule (73 Matches)</h2>
-        <div class="table-scroll">
+        <h2>Full Match Schedule (73 Total Games)</h2>
+        <div class="schedule-container">
             <table>
                 <thead><tr><th>Match</th><th>Matchup</th><th>Time</th></tr></thead>
                 <tbody>
-                    <tr class="day-header"><td colspan="3">Day 1</td></tr>
+                    <tr class="day-label"><td colspan="3">DAY 1</td></tr>
                     <tr><td>M1</td><td>Strikers vs Supar Kings</td><td>08:00 AM</td></tr>
                     <tr><td>M2</td><td>Warriors vs Royals</td><td>09:30 AM</td></tr>
                     <tr><td>M3</td><td>Titans vs Charges</td><td>11:00 AM</td></tr>
-                    <tr><td>M4</td><td>Knight Riders vs Bajarang XI</td><td>01:00 PM</td></tr>
-                    <tr><td>M5</td><td>King XI vs Elite Chikhali</td><td>02:30 PM</td></tr>
-                    <tr><td>M6</td><td>Suprime Surat vs Surat Giants</td><td>04:00 PM</td></tr>
-                    
-                    <tr class="day-header"><td colspan="3">Day 2</td></tr>
+                    <tr><td>M4</td><td>Knight Riders vs Bajarang XI</td><td>01:30 PM</td></tr>
+                    <tr><td>M5</td><td>King XI vs Elite Chikhali</td><td>03:00 PM</td></tr>
+                    <tr><td>M6</td><td>Suprime Surat vs Surat Giants</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 2</td></tr>
                     <tr><td>M7</td><td>Strikers vs Warriors</td><td>08:00 AM</td></tr>
                     <tr><td>M8</td><td>Supar Kings vs Royals</td><td>09:30 AM</td></tr>
                     <tr><td>M9</td><td>Titans vs Surat Giants</td><td>11:00 AM</td></tr>
-                    <tr><td>M10</td><td>Knight Riders vs Elite Chikhali</td><td>01:00 PM</td></tr>
-                    <tr><td>M11</td><td>King XI vs Bajarang XI</td><td>02:30 PM</td></tr>
-                    <tr><td>M12</td><td>Suprime Surat vs Charges</td><td>04:00 PM</td></tr>
+                    <tr><td>M10</td><td>Knight Riders vs Elite Chikhali</td><td>01:30 PM</td></tr>
+                    <tr><td>M11</td><td>King XI vs Bajarang XI</td><td>03:00 PM</td></tr>
+                    <tr><td>M12</td><td>Suprime Surat vs Charges</td><td>04:30 PM</td></tr>
 
-                    <tr class="day-header"><td colspan="3">Day 3 to Day 11</td></tr>
+                    <tr class="day-label"><td colspan="3">DAY 3</td></tr>
                     <tr><td>M13</td><td>Strikers vs Titans</td><td>08:00 AM</td></tr>
                     <tr><td>M14</td><td>Warriors vs Knight Riders</td><td>09:30 AM</td></tr>
-                    <tr><td>M15-M60</td><td>Full Round Robin...</td><td>...</td></tr>
-                    <tr><td>M61</td><td>Strikers vs Surat Giants</td><td>08:00 AM</td></tr>
-                    <tr><td>M62</td><td>Warriors vs Elite Chikhali</td><td>09:30 AM</td></tr>
-                    <tr><td>M63</td><td>Titans vs Bajarang XI</td><td>11:00 AM</td></tr>
-                    <tr><td>M64</td><td>Knight Riders vs Charges</td><td>01:00 PM</td></tr>
-                    <tr><td>M65</td><td>King XI vs Royals</td><td>02:30 PM</td></tr>
-                    <tr><td>M66</td><td>Suprime Surat vs Supar Kings</td><td>04:00 PM</td></tr>
+                    <tr><td>M15</td><td>Supar Kings vs King XI</td><td>11:00 AM</td></tr>
+                    <tr><td>M16</td><td>Royals vs Suprime Surat</td><td>01:30 PM</td></tr>
+                    <tr><td>M17</td><td>Charges vs Elite Chikhali</td><td>03:00 PM</td></tr>
+                    <tr><td>M18</td><td>Bajarang XI vs Surat Giants</td><td>04:30 PM</td></tr>
 
-                    <tr class="day-header"><td colspan="3">Final Day (Super 12 & Playoffs)</td></tr>
-                    <tr class="knockout"><td>M67</td><td>Rank 11 vs Rank 12 (11th Place)</td><td>08:00 AM</td></tr>
-                    <tr class="knockout"><td>M68</td><td>Rank 9 vs Rank 10 (9th Place)</td><td>09:15 AM</td></tr>
-                    <tr class="knockout"><td>M69</td><td>Rank 7 vs Rank 8 (7th Place)</td><td>10:30 AM</td></tr>
-                    <tr class="knockout"><td>M70</td><td>Rank 5 vs Rank 6 (5th Place)</td><td>11:45 AM</td></tr>
-                    <tr class="knockout" style="background:#ffd700"><td>M71</td><td>Semi Final 1 (Rank 1 vs Rank 4)</td><td>01:30 PM</td></tr>
-                    <tr class="knockout" style="background:#ffd700"><td>M72</td><td>Semi Final 2 (Rank 2 vs Rank 3)</td><td>03:00 PM</td></tr>
-                    <tr class="knockout" style="background:var(--navy); color:white;"><td>M73</td><td>GRAND FINAL</td><td>05:00 PM</td></tr>
+                    <tr class="day-label"><td colspan="3">DAY 4</td></tr>
+                    <tr><td>M19</td><td>Strikers vs Knight Riders</td><td>08:00 AM</td></tr>
+                    <tr><td>M20</td><td>Titans vs King XI</td><td>09:30 AM</td></tr>
+                    <tr><td>M21</td><td>Warriors vs Suprime Surat</td><td>11:00 AM</td></tr>
+                    <tr><td>M22</td><td>Supar Kings vs Bajarang XI</td><td>01:30 PM</td></tr>
+                    <tr><td>M23</td><td>Royals vs Charges</td><td>03:00 PM</td></tr>
+                    <tr><td>M24</td><td>Elite Chikhali vs Surat Giants</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 5</td></tr>
+                    <tr><td>M25</td><td>Strikers vs King XI</td><td>08:00 AM</td></tr>
+                    <tr><td>M26</td><td>Knight Riders vs Suprime Surat</td><td>09:30 AM</td></tr>
+                    <tr><td>M27</td><td>Titans vs Bajarang XI</td><td>11:00 AM</td></tr>
+                    <tr><td>M28</td><td>Warriors vs Charges</td><td>01:30 PM</td></tr>
+                    <tr><td>M29</td><td>Supar Kings vs Elite Chikhali</td><td>03:00 PM</td></tr>
+                    <tr><td>M30</td><td>Royals vs Surat Giants</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 6</td></tr>
+                    <tr><td>M31</td><td>Strikers vs Suprime Surat</td><td>08:00 AM</td></tr>
+                    <tr><td>M32</td><td>King XI vs Bajarang XI</td><td>09:30 AM</td></tr>
+                    <tr><td>M33</td><td>Knight Riders vs Charges</td><td>11:00 AM</td></tr>
+                    <tr><td>M34</td><td>Titans vs Elite Chikhali</td><td>01:30 PM</td></tr>
+                    <tr><td>M35</td><td>Warriors vs Surat Giants</td><td>03:00 PM</td></tr>
+                    <tr><td>M36</td><td>Supar Kings vs Royals</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 7</td></tr>
+                    <tr><td>M37</td><td>Strikers vs Bajarang XI</td><td>08:00 AM</td></tr>
+                    <tr><td>M38</td><td>Suprime Surat vs Charges</td><td>09:30 AM</td></tr>
+                    <tr><td>M39</td><td>King XI vs Elite Chikhali</td><td>11:00 AM</td></tr>
+                    <tr><td>M40</td><td>Knight Riders vs Surat Giants</td><td>01:30 PM</td></tr>
+                    <tr><td>M41</td><td>Titans vs Royals</td><td>03:00 PM</td></tr>
+                    <tr><td>M42</td><td>Warriors vs Supar Kings</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 8</td></tr>
+                    <tr><td>M43</td><td>Strikers vs Charges</td><td>08:00 AM</td></tr>
+                    <tr><td>M44</td><td>Bajarang XI vs Elite Chikhali</td><td>09:30 AM</td></tr>
+                    <tr><td>M45</td><td>Suprime Surat vs Surat Giants</td><td>11:00 AM</td></tr>
+                    <tr><td>M46</td><td>King XI vs Royals</td><td>01:30 PM</td></tr>
+                    <tr><td>M47</td><td>Knight Riders vs Supar Kings</td><td>03:00 PM</td></tr>
+                    <tr><td>M48</td><td>Titans vs Warriors</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 9</td></tr>
+                    <tr><td>M49</td><td>Strikers vs Elite Chikhali</td><td>08:00 AM</td></tr>
+                    <tr><td>M50</td><td>Charges vs Surat Giants</td><td>09:30 AM</td></tr>
+                    <tr><td>M51</td><td>Bajarang XI vs Royals</td><td>11:00 AM</td></tr>
+                    <tr><td>M52</td><td>Suprime Surat vs Supar Kings</td><td>01:30 PM</td></tr>
+                    <tr><td>M53</td><td>King XI vs Warriors</td><td>03:00 PM</td></tr>
+                    <tr><td>M54</td><td>Knight Riders vs Titans</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 10</td></tr>
+                    <tr><td>M55</td><td>Strikers vs Surat Giants</td><td>08:00 AM</td></tr>
+                    <tr><td>M56</td><td>Elite Chikhali vs Royals</td><td>09:30 AM</td></tr>
+                    <tr><td>M57</td><td>Charges vs Supar Kings</td><td>11:00 AM</td></tr>
+                    <tr><td>M58</td><td>Bajarang XI vs Warriors</td><td>01:30 PM</td></tr>
+                    <tr><td>M59</td><td>Suprime Surat vs Titans</td><td>03:00 PM</td></tr>
+                    <tr><td>M60</td><td>King XI vs Knight Riders</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 11</td></tr>
+                    <tr><td>M61</td><td>Strikers vs Royals</td><td>08:00 AM</td></tr>
+                    <tr><td>M62</td><td>Surat Giants vs Supar Kings</td><td>09:30 AM</td></tr>
+                    <tr><td>M63</td><td>Elite Chikhali vs Warriors</td><td>11:00 AM</td></tr>
+                    <tr><td>M64</td><td>Charges vs Titans</td><td>01:30 PM</td></tr>
+                    <tr><td>M65</td><td>Bajarang XI vs Knight Riders</td><td>03:00 PM</td></tr>
+                    <tr><td>M66</td><td>Suprime Surat vs King XI</td><td>04:30 PM</td></tr>
+
+                    <tr class="day-label"><td colspan="3">DAY 12 - FINALS & RANKINGS</td></tr>
+                    <tr class="final-day"><td>M67</td><td>Rank 11 vs Rank 12</td><td>08:00 AM</td></tr>
+                    <tr class="final-day"><td>M68</td><td>Rank 9 vs Rank 10</td><td>09:30 AM</td></tr>
+                    <tr class="final-day"><td>M69</td><td>Rank 7 vs Rank 8</td><td>11:00 AM</td></tr>
+                    <tr class="final-day"><td>M70</td><td>Rank 5 vs Rank 6</td><td>01:30 PM</td></tr>
+                    <tr class="final-day" style="background:#ffd700"><td>M71</td><td>Semi Final 1 (1 vs 4)</td><td>03:00 PM</td></tr>
+                    <tr class="final-day" style="background:#ffd700"><td>M72</td><td>Semi Final 2 (2 vs 3)</td><td>04:30 PM</td></tr>
+                    <tr style="background:var(--navy); color:white;"><td>M73</td><td>GRAND FINAL</td><td>07:30 PM</td></tr>
                 </tbody>
             </table>
         </div>
@@ -129,7 +192,7 @@
 </div>
 
 <footer>
-    <p>Organized by Manthan Mohite | Mahar Premier League 2027</p>
+    <p>&copy; 2027 Mahar Premier League | Organized by Manthan Mohite</p>
 </footer>
 
 </body>
